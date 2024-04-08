@@ -42,7 +42,7 @@ class BookController extends Controller
                 'status' => false,
                 'messaage' => 'error request',
                 'data' => $validator->errors()
-            ], 400);
+            ]);
         }
 
         $data->title = $request->title;
@@ -70,9 +70,9 @@ class BookController extends Controller
             ], 200);
         } else {
             return response()->json([
-                'satus' => false,
-                'errors' => 'data not found'
-            ], 400);
+                'status' => false,
+                'message' => 'data not found'
+            ]);
         }
     }
 
@@ -86,7 +86,7 @@ class BookController extends Controller
             return response()->json([
                 'satus' => true,
                 'message' => 'data not found'
-            ], 404);
+            ]);
         }
 
         $rules = [
@@ -101,7 +101,7 @@ class BookController extends Controller
                 'status' => false,
                 'messaage' => 'error request',
                 'data' => $validator->errors()
-            ], 400);
+            ]);
         }
 
         $data->title = $request->title;
@@ -125,7 +125,7 @@ class BookController extends Controller
             return response()->json([
                 'satus' => true,
                 'message' => 'data not found'
-            ], 404);
+            ],);
         }
 
         $post = $data->delete();
